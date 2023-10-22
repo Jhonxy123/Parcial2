@@ -56,7 +56,7 @@ public class Controlador extends HttpServlet {
                     case "Delete":
                         break;
                     default:
-                        throw new AssertionError();
+                   
                 }
                 request.getRequestDispatcher("Principal.jsp").forward(request, response);
             }
