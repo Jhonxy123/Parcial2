@@ -10,6 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,19 +23,23 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
             String menu = request.getParameter("menu");
             String accion = request.getParameter("accion");
+            if(menu.equals("Clientes")){
+                JOptionPane.showMessageDialog(null, "ENTRO A LA CONDICIÓN");
+                request.getRequestDispatcher("Clientes.jsp").forward(request, response);
+            }
             if(menu.equals("Principal")){
                 request.getRequestDispatcher("Principal.jsp").forward(request, response);
             }
-            if(menu.equals("Empleados")){
+            if(menu.equals("Empleado")){
+                JOptionPane.showMessageDialog(null, "ENTRO A LA CONDICIÓN");
                 request.getRequestDispatcher("empleado.jsp").forward(request, response);
             }
-            if(menu.equals("Cliente")){
-                request.getRequestDispatcher("Cliente.jsp").forward(request, response);
-            }
             if(menu.equals("Producto")){
+                JOptionPane.showMessageDialog(null, "ENTRO A LA CONDICIÓN");
                 request.getRequestDispatcher("Producto.jsp").forward(request, response);
             }
-            if(menu.equals("NuevaVento")){
+            if(menu.equals("NuevaVenta")){
+                JOptionPane.showMessageDialog(null, "ENTRO A LA CONDICIÓN");
                 request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
             }
     }

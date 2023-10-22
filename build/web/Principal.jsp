@@ -18,36 +18,41 @@
                     <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Producto">Producto</a>
+                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Producto" target="myFrame">Producto</a>
                 </li>
                 <li class="nav-item">
-                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Empleado">Empleado</a>
+                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Empleado" target="myFrame">Empleado</a>
                 </li>
                 <li class="nav-item">
-                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Cliente">Clientes</a>
+                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Cliente" target="myFrame">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=NuevaVenta">Nueva venta</a>
+                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=NuevaVenta" target="myFrame">Nueva venta</a>
                 </li>
             </ul>
             
         </div>
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            <button style="border: none" class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Usuario Ingresar
+                ${usuario.getNom()}
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">
                    <img src="img/usuario.png" alt="60" width="60" />
                 </a>
-                <a class="dropdown-item" href="#">Usuario</a>
+                <a class="dropdown-item" href="#">${usuario.getUser()}</a>
                 <a class="dropdown-item" href="#">usuario@gmail.com</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Salir</a>
+                <form action="Validar" method="POST">
+                    <button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
+                </form>
             </div>
         </div>
     </nav>
+                <div class="m-4" style="height: 5850px;">
+                    <iframe name="myFrame" style="height: 100%;  border: none; width: 100%;"></iframe>
+                </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
