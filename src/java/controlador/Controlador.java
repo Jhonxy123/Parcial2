@@ -32,7 +32,6 @@ public class Controlador extends HttpServlet {
             if(menu.equals("Clientes")){
                 switch(accion){
                     case "Listar":
-                        
                         break;
                     case "Agregar":
                         break;
@@ -56,7 +55,7 @@ public class Controlador extends HttpServlet {
                     case "Delete":
                         break;
                     default:
-                        throw new AssertionError();
+                    //   throw new AssertionError();
                 }
                 request.getRequestDispatcher("Principal.jsp").forward(request, response);
             }
