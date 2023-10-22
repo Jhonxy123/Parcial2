@@ -24,22 +24,66 @@ public class Controlador extends HttpServlet {
             String menu = request.getParameter("menu");
             String accion = request.getParameter("accion");
             if(menu.equals("Clientes")){
-                JOptionPane.showMessageDialog(null, "ENTRO A LA CONDICIÓN");
+                switch(accion){
+                    case "Listar":
+                        break;
+                    case "Agregar":
+                        break;
+                    case "Editar":
+                        break;
+                    case "Delete":
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
                 request.getRequestDispatcher("Clientes.jsp").forward(request, response);
             }
             if(menu.equals("Principal")){
+                 switch(accion){
+                    case "Listar":
+                        break;
+                    case "Agregar":
+                        break;
+                    case "Editar":
+                        break;
+                    case "Delete":
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
                 request.getRequestDispatcher("Principal.jsp").forward(request, response);
             }
             if(menu.equals("Empleado")){
-                JOptionPane.showMessageDialog(null, "ENTRO A LA CONDICIÓN");
+                 switch(accion){
+                    case "Listar":
+                        break;
+                    case "Agregar":
+                        break;
+                    case "Editar":
+                        break;
+                    case "Delete":
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
                 request.getRequestDispatcher("empleado.jsp").forward(request, response);
             }
             if(menu.equals("Producto")){
-                JOptionPane.showMessageDialog(null, "ENTRO A LA CONDICIÓN");
+                 switch(accion){
+                    case "Listar":
+                        break;
+                    case "Agregar":
+                        break;
+                    case "Editar":
+                        break;
+                    case "Delete":
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
                 request.getRequestDispatcher("Producto.jsp").forward(request, response);
             }
             if(menu.equals("NuevaVenta")){
-                JOptionPane.showMessageDialog(null, "ENTRO A LA CONDICIÓN");
                 request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
             }
     }
