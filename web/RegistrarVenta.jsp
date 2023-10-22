@@ -11,29 +11,84 @@
         <div class="d-flex">
             <div class="col-sm-4">
                 <div class="card">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label>Datos del cliente</label>
+                    <form action="Controlador" method="POST">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Datos del cliente</label>
+                            </div>
+                            <div class="form-group d-flex">
+                                <div class="col-sm-6 d-flex">
+                                    <input type="text" name="codigocliente" class="form-control" placeholder="codigo">
+                                    <input type="submit" name="accion" value="Buscar" class="btn btn-outline-info">
+                                </div>
+                                <div class="col-sm-6 d-flex">
+                                    <input type="text" name="nombrescliente" placeholder="Datos cliente" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <<label>Datos Producto</label>>
+                            </div>
+                            <div class="form-group d-flex">
+                                <div class="col-sm-6 d-flex">
+                                    <input type="text" name="codigoproducto" class="form-control" placeholder="codigo">
+                                    <input type="submit" name="accion" value="Buscar" class="btn btn-outline-info">
+                                </div>
+                                <div class="col-sm-6 d-flex">
+                                    <input type="text" name="nombrescliente" placeholder="Datos cliente" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group d-flex">
+                                <div class="col-sm-6 d-flex">
+                                    <input type="text" name="precio" class="form-control" placeholder="codigo">
+                                    <input type="submit" name="accion" value="Buscar" class="btn btn-outline-info">
+                                </div>
+                                <div class="col-sm-3 d-flex">
+                                    <input type="number" name="cant" placeholder="" class="form-control">
+                                </div>
+                                <div class="col-sm-3 d-flex">
+                                    <input type="text" name="stock" placeholder="stock" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="accion" value="Agregar" class="btn btn-outline-info">
+                            </div>
                         </div>
-                        <div class="form-group d-flex">
-                            <div class="col-sm-4">
-                                <input type="text" name="Codigocliente" class="from-control" placeholder="codigo">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="submit" name="accion" value="Buscar" class="btn btn-outline-info">
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" name="nombrescliente" class="from-control">
-                            </div>
-                        </div>
-                        <div class="form-group"></div>
-                        <div class="form-group"></div>
-                        <div class="form-group"></div>
-                    </div>
+                    </form>
                 </div> 
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-7">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <<label>NumeroSerie</label>>
+                            <input type="text" name="NroSerie" class="form-control">
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nro</th>
+                                    <th>Codigo</th>
+                                    <th>Descripcion</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>SubTotal</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
+                    </div>
+                </div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
