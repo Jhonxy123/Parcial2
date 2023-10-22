@@ -18,16 +18,16 @@
                     <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Producto</a>
+                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Producto">Producto</a>
                 </li>
                 <li class="nav-item">
-                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Empleado</a>
+                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Empleado">Empleado</a>
                 </li>
                 <li class="nav-item">
-                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Clientes</a>
+                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Cliente">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Nueva venta</a>
+                    <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=NuevaVenta">Nueva venta</a>
                 </li>
             </ul>
             

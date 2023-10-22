@@ -45,7 +45,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>CEDULA</th>
+                            <th>DNI</th>
                             <th>NOMBRE</th>
                             <th>TELEFONO</th>
                             <th>ESTADO</th>
