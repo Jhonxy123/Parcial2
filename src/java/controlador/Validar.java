@@ -58,7 +58,6 @@ public class Validar extends HttpServlet {
         if(accion.equalsIgnoreCase("Ingresar")){
             String user=request.getParameter("txtuser");
             String pass=request.getParameter("txtpass");
-            JOptionPane.showMessageDialog(null, user);
             em=edao.validar(user, pass);
             if(em.getUser() !=null){
                 request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
