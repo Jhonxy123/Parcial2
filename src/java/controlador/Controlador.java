@@ -69,14 +69,14 @@ public class Controlador extends HttpServlet {
                         String nom=request.getParameter("txtNombres");
                         String tel=request.getParameter("txtTel");
                         String est=request.getParameter("txtEstado");
-                        String user=request.getParameter("txtUser");
+                        String user=request.getParameter("txtUsuario");
                         em.setDni(dni);
                         em.setNom(nom);
                         em.setTel(tel);
                         em.setEstado(est);
                         em.setUser(user);
                         edao.agregar(em);
-                        request.getRequestDispatcher("controlador?menu=Empleado&accion=Listar").forward(request,response);
+                        request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request,response);
                         break;
                     case "Editar":
                         ide=Integer.parseInt(request.getParameter("id"));
@@ -89,7 +89,7 @@ public class Controlador extends HttpServlet {
                         String nom1=request.getParameter("txtNombres");
                         String tel1=request.getParameter("txtTel");
                         String est1=request.getParameter("txtEstado");
-                        String user1=request.getParameter("txtUser");
+                        String user1=request.getParameter("txtUsuario");
                         em.setDni(dni1);
                         em.setNom(nom1);
                         em.setTel(tel1);
@@ -102,12 +102,12 @@ public class Controlador extends HttpServlet {
                     case "Delete":
                         ide=Integer.parseInt(request.getParameter("id"));
                         edao.delete(ide);
-                        
+                        request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request,response);
                         break;
                     default:
                         throw new AssertionError();
                 }
-                request.getRequestDispatcher("empleado.jsp").forward(request, response);
+            request.getRequestDispatcher("empleado.jsp").forward(request, response);
             }
             if(menu.equals("Producto")){
                  switch(accion){
