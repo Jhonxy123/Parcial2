@@ -39,8 +39,8 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="precio" class="form-control" placeholder="codigo">
-                                    <input type="submit" name="accion" value="Buscar" class="btn btn-outline-info">
+                                    <input type="text" name="precio" class="form-control" placeholder="$/.0.00">
+                                    
                                 </div>
                                 <div class="col-sm-3 d-flex">
                                     <input type="number" name="cant" placeholder="" class="form-control">
@@ -90,7 +90,7 @@
                     </div>
                     <div class="card-footer">
                         <div>
-                            <input type="submit" name="accion" value="Generar Venta" class="btn btn-sucess">
+                            <input type="submit" name="accion" value="Generar Venta" class="btn btn-success">
                             <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
                         </div>
                     </div>
