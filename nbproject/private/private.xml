@@ -2,6 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/web/RegistrarVenta.jsp</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/ProductoDAO.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/Venta.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/VentaDAO.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/Producto.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/config/GenerarSerie.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/Cliente.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/web/index.jsp</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/controlador/Controlador.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/web/empleado.jsp</file>
+        </group>
+>>>>>>> 7943be63c9319edf0208d170cf600774aabaffc7
     </open-files>
 </project-private>
