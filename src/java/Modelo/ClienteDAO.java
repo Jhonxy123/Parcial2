@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
 
 import config.Conexion;
@@ -21,7 +18,7 @@ public class ClienteDAO {
     int r;
     
     public Empleado validar (String user,String dni){
-        Empleado em=new Empleado();
+        Cliente cl=new Cliente();
         String sql="select * from empleado where user=? and dni=?";
         try{
             con=cn.Conexion();
@@ -31,13 +28,13 @@ public class ClienteDAO {
             rs=ps.executeQuery();
             while(rs.next()){
                 //em.setId(rs.getInt("IdEmpleado"));
-                em.setUser(rs.getString("user"));
-                em.setDni(rs.getString("dni"));
-                em.setNom(rs.getString("Nombres"));
+                cl.setUser(rs.getString("user"));
+                cl.setDni(rs.getString("dni"));
+                cl.setNom(rs.getString("Nombres"));
             }
         }catch (Exception e){
         }
-        return em;
+        return cl;
     }
     
     //operación CRUD
