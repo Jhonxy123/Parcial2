@@ -4,8 +4,7 @@
  */
 package controlador;
 
-import Modelo.Empleado;
-import Modelo.EmpleadoDAO;
+import Modelo.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -23,7 +22,13 @@ public class Controlador extends HttpServlet {
 
     Empleado em=new Empleado();
     EmpleadoDAO edao=new EmpleadoDAO();
+    Cliente cl=new Cliente();
+    ClienteDAO cdao=new ClienteDAO();
+    Producto p=new Producto();
+    ProductoDAO pdao=new ProductoDAO();
     int ide;
+    int idc;
+    int idp;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -125,7 +130,19 @@ public class Controlador extends HttpServlet {
                 request.getRequestDispatcher("Producto.jsp").forward(request, response);
             }
             if(menu.equals("NuevaVenta")){
+                switch (accion) {
+                    case "BuscarCliente":
+                        String dni=request.getParameter("codigocliente");
+                        cl.setDni(dni);
+                        cl=cdao.buscar(dni);
+                        request.setAttribute("c", cl);
+                        JOptionPane.showMessageDialog(null, "si ingreso al if");
+                        break;
+                    default:
+                        request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
+                }
                 request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
+                JOptionPane.showMessageDialog(null, "No tomo el if");
             }
     }
 

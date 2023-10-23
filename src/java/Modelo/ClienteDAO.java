@@ -17,18 +17,35 @@ public class ClienteDAO {
     ResultSet rs;
     int r;
     
-    public Empleado validar (String user,String dni){
-        Cliente cl=new Cliente();
-        String sql="select * from empleado where user=? and dni=?";
+    public Cliente buscar(String dni){
+        Cliente c=new Cliente();
+        String sql="select * from cliente where Dni="+dni;
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
-            ps.setString(1, user);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                c.setId(rs.getString(1));
+                c.setDni(rs.getString(2));
+                c.setNom(rs.getString(3));
+                c.setDireccion(rs.getString(4));
+                c.setEstado(rs.getString(5));
+            }
+        }catch(Exception e){}
+        return c;
+    }
+    
+    public Cliente validar (String id,String dni){
+        Cliente cl=new Cliente();
+        String sql="select * from cliente where IdCliente=? and Dni=?";
+        try{
+            con=cn.Conexion();
+            ps=con.prepareStatement(sql);
+            ps.setString(1, id);
             ps.setString(2, dni);
             rs=ps.executeQuery();
             while(rs.next()){
-                //em.setId(rs.getInt("IdEmpleado"));
-                cl.setUser(rs.getString("user"));
+                cl.setId(rs.getString("IdCliente"));
                 cl.setDni(rs.getString("dni"));
                 cl.setNom(rs.getString("Nombres"));
             }
@@ -48,68 +65,63 @@ public class ClienteDAO {
             rs=ps.executeQuery();
             while(rs.next()){
                 Cliente cl=new Cliente();
-                em.setId(rs.getInt(1));
-                em.setDni(rs.getString(2));
-                em.setNom(rs.getString(3));
-                em.setTel(rs.getString(4));
-                em.setEstado(rs.getString(5));
-                em.setUser(rs.getString(6));
-                lista.add(em);
-                
+                cl.setId(rs.getString(1));
+                cl.setDni(rs.getString(2));
+                cl.setNom(rs.getString(3));
+                cl.setDireccion(rs.getString(4));
+                cl.setEstado(rs.getString(5));
+                lista.add(cl);
             }
         }catch(Exception e){
         }
         return lista;
     }
-    public int agregar(Empleado em){
-        String sql="insert into empleado(Dni, Nombres, Telefonos, Estados, User)values(?,?,?,?,?)";
+    public int agregar(Cliente cl){
+        String sql="insert into cliente(Dni, Nombres, Direccion, Estado)values(?,?,?,?)";
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
-            ps.setString(1, em.getDni());
-            ps.setString(2, em.getNom());
-            ps.setString(3, em.getTel());
-            ps.setString(4, em.getEstado());
-            ps.setString(5, em.getUser());
+            ps.setString(1, cl.getDni());
+            ps.setString(2, cl.getNom());
+            ps.setString(3, cl.getDireccion());
+            ps.setString(4, cl.getEstado());
             ps.executeUpdate();
         }catch(Exception e){}
         return r;
     }
     
-    public Empleado listarId(int id){
-        Empleado emp=new Empleado();
-        String sql="select * from empleado where IdEmpleado="+id;
+    public Cliente listarId(String id){
+        Cliente cl=new Cliente();
+        String sql="select * from cliente where IdCliente="+id;
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
-                emp.setDni(rs.getString(2));
-                emp.setNom(rs.getString(3));
-                emp.setTel(rs.getString(4));
-                emp.setEstado(rs.getString(5));
-                emp.setUser(rs.getString(6));
+                cl.setDni(rs.getString(2));
+                cl.setNom(rs.getString(3));
+                cl.setDireccion(rs.getString(4));
+                cl.setEstado(rs.getString(5));
             }
         }catch(Exception e){}
-        return emp;
+        return cl;
     }
     
-    public int actualizar(Empleado em){
-        String sql="update empleado set Dni=?, Nombres=?, Telefonos=?, Estados=?, User=? where IdEmpleado=?";
+    public int actualizar(Cliente cl){
+        String sql="update cliente set Dni=?, Nombres=?, Direccion=?, Estado=? where IdCliente=?";
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
-            ps.setString(1, em.getDni());
-            ps.setString(2, em.getNom());
-            ps.setString(3, em.getTel());
-            ps.setString(4, em.getEstado());
-            ps.setString(5, em.getUser());
+            ps.setString(1, cl.getDni());
+            ps.setString(2, cl.getNom());
+            ps.setString(3, cl.getDireccion());
+            ps.setString(4, cl.getEstado());
             ps.executeUpdate();
         }catch(Exception e){}
         return r;
     }
-    public void delete(int id){
-        String sql="delete from empleado where IdEmpleado="+id;
+    public void delete(String id){
+        String sql="delete from cliente where IdCliente="+id;
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
