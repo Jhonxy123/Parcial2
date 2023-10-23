@@ -59,10 +59,11 @@
             <div class="col-sm-7">
                 <div class="card">
                     <div class="card-body">
-                        <div>
+                        <div class="d-flex col-sm-5 ml-auto">
                             <<label>NumeroSerie</label>>
                             <input type="text" name="NroSerie" class="form-control">
                         </div>
+                        <br>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -86,7 +87,12 @@
                                 </tr>
                             </tbody>
                         </table>
-
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <input type="submit" name="accion" value="Generar Venta" class="btn btn-sucess">
+                            <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
+                        </div>
                     </div>
                 </div>
             </div>
