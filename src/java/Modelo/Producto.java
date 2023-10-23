@@ -12,11 +12,16 @@ public class Producto {
     int id;
     String dni;
     String nom;
-    String precio;
-    String stock;
+    Double precio;
+    int stock;
     String estado; 
 
-    public Producto(int id, String dni, String nom, String precio, String stock, String estado) {
+    public Producto() {
+    }
+
+    
+    
+    public Producto(int id, String dni, String nom, Double precio, int stock, String estado) {
         this.id = id;
         this.dni = dni;
         this.nom = nom;
@@ -26,9 +31,6 @@ public class Producto {
     }
     
     
-
-    public Producto() {
-    }
 
     public int getId() {
         return id;
@@ -54,19 +56,19 @@ public class Producto {
         this.nom = nom;
     }
 
-    public String getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
-    public String getStock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setStock(String stock) {
+    public void setStock(int stock) {
         this.stock = stock;
     }
 
@@ -77,6 +79,9 @@ public class Producto {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+  
+ 
     
     
 

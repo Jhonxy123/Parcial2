@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/src/java/Modelo/Empleado.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/src/java/controlador/Controlador.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/web/RegistrarVenta.jsp</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/web/Principal.jsp</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/src/java/Modelo/Producto.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/src/java/Modelo/EmpleadoDAO.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/src/java/Modelo/Cliente.java</file>
-            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/src/java/Modelo/ClienteDAO.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/web/RegistrarVenta.jsp</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/ProductoDAO.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/Venta.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/VentaDAO.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/Producto.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/config/GenerarSerie.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/Cliente.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/web/index.jsp</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/controlador/Controlador.java</file>
+            <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/web/empleado.jsp</file>
         </group>
     </open-files>
 </project-private>
