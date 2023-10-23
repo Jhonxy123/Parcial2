@@ -24,22 +24,22 @@
                         </div>
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input type="text" value="${empleado.getNom()}"  name="txtNombre" class="form-control">
+                            <input type="text" value="${empleado.getNom()}"  name="txtNombres" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input type="text" value="${empleado.getTel()}"  name="txtTelefono" class="form-control">
+                            <input type="text" value="${empleado.getTel()}"  name="txtTel" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
                             <input type="text" value="${empleado.getEstado()}"  name="txtEstado" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Usuarios</label>
-                            <input type="text" name="txtUsuario" class="form-control">
+                            <label>Usuario</label>
+                            <input type="text" value="${empleado.getUser()}" name="txtUsuario" class="form-control">
                         </div>
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-info">
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-info">
                     </form>
                 </div>
             </div>
@@ -60,6 +60,7 @@
                         <%@page import="Modelo.Empleado" %>
                         <%
                         List<Empleado> empleados = (List<Empleado>) request.getAttribute("empleados");
+                        if(empleados!=null){
                         for(Empleado em: empleados){
                         %>
                         <tr>
@@ -69,11 +70,12 @@
                             <td><%=em.getEstado()%></td>
                             <td><%=em.getUser()%></td>
                             <<td>
-                                <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&id=${em.getId()}">Editar</a>
-                                <a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Delete&id=${em.getId()}">Delete</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&id=<%=em.getId()%>">Editar</a>
+                                <a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Delete&id=<%=em.getId()%>">Delete</a>
                             </td>
                         </tr>
                         <%
+                            }
                             }
                         %>
                     </tbody>

@@ -11,7 +11,7 @@ public class EmpleadoDAO {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    int r;
+    int r=0;
     
     public Empleado validar (String user,String dni){
         Empleado em=new Empleado();
@@ -58,7 +58,7 @@ public class EmpleadoDAO {
         return lista;
     }
     public int agregar(Empleado em){
-        String sql="insert into empleado(Dni, Nombres, Telefonos, Estados, User)values(?,?,?,?,?)";
+        String sql="Insert into empleado(Dni, Nombres, Telefono, Estado, User)values(?,?,?,?,?)";
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -91,7 +91,7 @@ public class EmpleadoDAO {
     }
     
     public int actualizar(Empleado em){
-        String sql="update empleado set Dni=?, Nombres=?, Telefonos=?, Estados=?, User=? where IdEmpleado=?";
+        String sql="update empleado set Dni=?, Nombres=?, Telefono=?, Estado=?, User=? where IdEmpleado=?";
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -100,6 +100,7 @@ public class EmpleadoDAO {
             ps.setString(3, em.getTel());
             ps.setString(4, em.getEstado());
             ps.setString(5, em.getUser());
+            ps.setInt(6, em.getId());
             ps.executeUpdate();
         }catch(Exception e){}
         return r;
