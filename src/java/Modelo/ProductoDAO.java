@@ -4,10 +4,21 @@
  */
 package Modelo;
 
+import config.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 /**
  *
  * @author PC
  */
 public class ProductoDAO {
+    Conexion cn=new Conexion();
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
+    
+    
     
 }
