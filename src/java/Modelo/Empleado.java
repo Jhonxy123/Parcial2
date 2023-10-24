@@ -34,7 +34,7 @@ public class Empleado {
         return dni;
     }
 
-    public void setCedula(String cedula) {
+    public void setDni(String cedula) {
         this.dni = cedula;
     }
 
