@@ -6,11 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Empleado</title>
     </head>
     <body>
         <div class="d-flex">
@@ -19,7 +19,7 @@
                     <form action="Controlador?menu=Empleado" method="POST">
                     <form>
                         <div class="form-group">
-                            <label>Dni</label>
+                            <label>DNI</label>
                             <input type="text" value="${empleado.getDni()}" name="txtDni" class="form-control">
                         </div>
                         <div class="form-group">
@@ -27,7 +27,7 @@
                             <input type="text" value="${empleado.getNom()}"  name="txtNombres" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Telefono</label>
+                            <label>Teléfono</label>
                             <input type="text" value="${empleado.getTel()}"  name="txtTel" class="form-control">
                         </div>
                         <div class="form-group">
@@ -49,7 +49,7 @@
                         <tr>
                             <th>DNI</th>
                             <th>NOMBRE</th>
-                            <th>TELEFONO</th>
+                            <th>TELÉFONO</th>
                             <th>ESTADO</th>
                             <th>USER</th>
                             <th>ACCIONES</th>
