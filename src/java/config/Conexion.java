@@ -16,9 +16,9 @@ public class Conexion {
         try {
             Class.forName(driver);
             con = (Connection) DriverManager.getConnection(this.url, this.user, this.password);
-            JOptionPane.showMessageDialog(null, "CONEXION EXITOSA A LA BD");
+           
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "NO SE PUDO CONECTAR CON LA BASE" + e);
+           
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "NO SE PUDO CONECTAR CON LA BASE" + ex);
         }
