@@ -39,7 +39,7 @@
             </button>
             <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">
-                   <img src="img/usuario.png" alt="60" width="60" />
+                   <img src="https://img.freepik.com/vector-premium/icono-circulo-usuario-anonimo-ilustracion-vector-estilo-plano-sombra_520826-1931.jpg?w=740" alt="60" width="60" />
                 </a>
                 <a class="dropdown-item" href="#">${usuario.getUser()}</a>
                 <a class="dropdown-item" href="#">usuario@gmail.com</a>
