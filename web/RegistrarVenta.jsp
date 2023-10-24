@@ -1,10 +1,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Vnetas</title>
+        <title>Ventas</title>
         
         <style>
             @media print{
@@ -27,11 +27,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="codigo">
+                                    <input type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Código">
                                     <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">
                                 </div>
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="nombrescliente" value="${c.getNom()}" placeholder="Datos cliente" class="form-control">
+                                    <input type="text" name="nombrescliente" value="${c.getNom()}" placeholder="Datos Cliente" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigoproducto" class="form-control" value="${producto.getId()}" placeholder="codigo">
+                                    <input type="text" name="codigoproducto" class="form-control" value="${producto.getId()}" placeholder="Código">
                                     <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
                                 </div>
                                 <div class="col-sm-6 d-flex">
@@ -55,7 +55,7 @@
                                     <input type="number" name="cant" value="1" placeholder="" class="form-control">
                                 </div>
                                 <div class="col-sm-3 d-flex">
-                                    <input type="text" name="stock" value="${producto.getStock()}" placeholder="stock" class="form-control">
+                                    <input type="text" name="stock" value="${producto.getStock()}" placeholder="Stock" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -71,7 +71,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex col-sm-5 ml-auto">
-                            <label>Nro.Serie: </label>
+                            <label>Nro.Serie:  </label>
                             <input type="text" name="NroSerie" value="${nserie}" class="form-control">
                         </div>
                         <br>
@@ -79,8 +79,8 @@
                             <thead>
                                 <tr class="text-center">
                                     <th>Nro</th>
-                                    <th>Codigo</th>
-                                    <th>Descripcion</th>
+                                    <th>Código</th>
+                                    <th>Descripción</th>
                                     <th>Precio</th>
                                     <th>Cantidad</th>
                                     <th>SubTotal</th>
@@ -104,7 +104,7 @@
                                     <td><%=v.getSubtotal()%></td>
                                     <td class="d-flex">
                                         <a class="btn btn-warning" href="#">Editar</a>
-                                        <a class="btn btn-danger" href="#" style="margin-left: 10px ">Delete</a>
+                                        <a class="btn btn-danger" href="#" style="margin-left: 10px ">Borrar</a>
                                     </td>
                                 </tr>
                                 <%}
@@ -114,7 +114,7 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="col-sm-6">
-                            <a href="Controlador?menu=NuevaVenta&accion=GenerarVenta" onclick="print()" >Generar Venta</a>
+                            <a href="Controlador?menu=NuevaVenta&accion=GenerarVenta" onclick="print()" class="btn btn-info">Generar Venta</a>
                             <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
                         </div>
                         <div class="co-sm-4 ml-auto">
