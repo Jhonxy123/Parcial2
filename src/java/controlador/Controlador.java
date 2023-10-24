@@ -49,13 +49,30 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
             String menu = request.getParameter("menu");
             String accion = request.getParameter("accion");
+            
             if(menu.equals("Clientes")){
                 switch(accion){
                     case "Listar":
+                        List lista=cdao.listar();
+                        request.setAttribute("clientes",lista);
                         break;
                     case "Agregar":
+                        String dni=request.getParameter("txtDnicliente");
+                        String nom=request.getParameter("txtNombrescliente");
+                        String dir=request.getParameter("txtDireccioncliente");
+                        String est=request.getParameter("txtEstadocliene");
+                        cl.setDni(dni);
+                        cl.setNom(nom);
+                        cl.setDireccion(dir);
+                        cl.setEstado(est);
+                        cdao.agregar(cl);
+                        request.getRequestDispatcher("Controlador?menu=Clientes&accion=Listar").forward(request,response);
                         break;
                     case "Editar":
+                        ide=Integer.parseInt(request.getParameter("id"));
+                        Cliente c=cdao.listarId(ide);    
+                        request.setAttribute("cliente",c);
+                        request.getRequestDispatcher("Controlador?menu=Clientes&accion=Listar").forward(request,response);
                         break;
                     case "Delete":
                         break;

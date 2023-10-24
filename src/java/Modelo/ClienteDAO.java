@@ -90,7 +90,7 @@ public class ClienteDAO {
         return r;
     }
     
-    public Cliente listarId(String id){
+    public Cliente listarId(int id){
         Cliente cl=new Cliente();
         String sql="select * from cliente where IdCliente="+id;
         try{
