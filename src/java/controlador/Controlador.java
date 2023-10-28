@@ -5,6 +5,7 @@
 package controlador;
 
 import Modelo.*;
+import com.mysql.cj.protocol.Message;
 import config.GenerarSerie;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,6 +13,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -248,6 +250,18 @@ public class Controlador extends HttpServlet {
                 
             }
     }
+       String clavesha="";
+    private String asegurarClave(String textoclaro){
+        try{
+            MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
+            sha256.update(textoclaro.getBytes());
+         
+        }catch(Exception e){
+            
+        }
+        return clavesha;
+    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
