@@ -5,6 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="Modelo.Cliente" %>
+<%@ page import="Modelo.Empleado" %>
+<%
+    HttpSession sesion = (HttpSession)request.getSession();
+    Empleado emp = (Empleado)sesion.getAttribute("usuario");
+    if (emp == null) {
+        response.sendRedirect("index.jsp");
+    }else{
+            
+%>  
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -50,8 +61,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <%@page import="java.util.List"%>
-                        <%@page import="Modelo.Cliente" %>
                         <%
                         List<Cliente> clientes = (List<Cliente>) request.getAttribute("clientes");
                         if(clientes!=null){
@@ -80,3 +89,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
+<%}%>

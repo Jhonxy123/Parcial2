@@ -57,7 +57,7 @@ public class ClienteDAO {
     //operación CRUD
     
     public List listar(){
-        String sql="select * from cliente";
+        String sql="select * from cliente ORDER BY 2";
         List<Cliente>lista=new ArrayList<>();
         try{
             con=cn.Conexion();

@@ -36,7 +36,7 @@ public class EmpleadoDAO {
     //operación CRUD
     
     public List listar(){
-        String sql="select * from empleado";
+        String sql="select * from empleado ORDER BY 3";
         List<Empleado>lista=new ArrayList<>();
         try{
             con=cn.Conexion();
