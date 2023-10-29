@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/web/Producto.jsp</file>
             <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/web/Principal.jsp</file>
             <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/Modelo/EmpleadoDAO.java</file>
@@ -11,6 +12,10 @@
             <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/web/index.jsp</file>
             <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/controlador/Controlador.java</file>
             <file>file:/C:/Users/jj199/OneDrive/Documentos/NetBeansProjects/Parcial2/src/java/controlador/Validar.java</file>
+=======
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/web/Principal.jsp</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/sis_ventas/web/empleado.jsp</file>
+>>>>>>> e9042c542a93eb7e55d9ed43544e070a3f75e150
         </group>
     </open-files>
 </project-private>

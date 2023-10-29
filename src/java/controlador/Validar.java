@@ -12,9 +12,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+=======
+import jakarta.servlet.http.HttpSession;
+>>>>>>> e9042c542a93eb7e55d9ed43544e070a3f75e150
 import javax.swing.JOptionPane;
 
 /**
@@ -77,13 +81,21 @@ public class Validar extends HttpServlet {
             
             em=edao.validar(user, ClaveEncriptada);
             if(em.getUser() !=null){
+<<<<<<< HEAD
                 request.setAttribute("usuario", em);
                 request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
+=======
+                HttpSession  session = request.getSession(true);
+                session.setAttribute("usuario", em);
+                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response); 
+>>>>>>> e9042c542a93eb7e55d9ed43544e070a3f75e150
             }else{
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         }
         else{
+            HttpSession session = request.getSession(false);
+            session.invalidate();
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
