@@ -14,7 +14,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -109,11 +111,13 @@ public class Controlador extends HttpServlet {
                         String tel=request.getParameter("txtTel");
                         String est=request.getParameter("txtEstado");
                         String user=request.getParameter("txtUsuario");
+                        String Contrasena=asegurarClave(request.getParameter("txtContrasena"));
                         em.setDni(dni);
                         em.setNom(nom);
                         em.setTel(tel);
                         em.setEstado(est);
                         em.setUser(user);
+                        em.setContrasena(Contrasena);
                         edao.agregar(em);
                         request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request,response);
                         break;
@@ -250,14 +254,15 @@ public class Controlador extends HttpServlet {
                 
             }
     }
-       String clavesha="";
+       
     private String asegurarClave(String textoclaro){
+        String clavesha="";
         try{
             MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
             sha256.update(textoclaro.getBytes());
-         
-        }catch(Exception e){
-            
+            clavesha=Base64.getEncoder().encodeToString(sha256.digest());        
+        }catch(NoSuchAlgorithmException e){
+            System.out.println("ERROR EN LA ENCRIPTACION: "+e.getMessage());
         }
         return clavesha;
     }

@@ -13,19 +13,19 @@ public class EmpleadoDAO {
     ResultSet rs;
     int r=0;
     
-    public Empleado validar (String user,String dni){
+    public Empleado validar (String user,String Contrasena){
         Empleado em=new Empleado();
-        String sql="select * from empleado where user=? and dni=?";
+        String sql="select * from empleado where user=? and Contrasena=?";
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             ps.setString(1, user);
-            ps.setString(2, dni);
+            ps.setString(2, Contrasena);
             rs=ps.executeQuery();
             while(rs.next()){
                 //em.setId(rs.getInt("IdEmpleado"));
                 em.setUser(rs.getString("user"));
-                em.setDni(rs.getString("dni"));
+                em.setDni(rs.getString("Contrasena"));
                 em.setNom(rs.getString("Nombres"));
             }
         }catch (Exception e){
@@ -58,7 +58,7 @@ public class EmpleadoDAO {
         return lista;
     }
     public int agregar(Empleado em){
-        String sql="Insert into empleado(Dni, Nombres, Telefono, Estado, User)values(?,?,?,?,?)";
+        String sql="Insert into empleado(Dni, Nombres, Telefono, Estado, User, Contrasena)values(?,?,?,?,?,?)";
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -67,6 +67,7 @@ public class EmpleadoDAO {
             ps.setString(3, em.getTel());
             ps.setString(4, em.getEstado());
             ps.setString(5, em.getUser());
+            ps.setString(6, em.getContrasena());
             ps.executeUpdate();
         }catch(Exception e){}
         return r;
@@ -85,13 +86,14 @@ public class EmpleadoDAO {
                 emp.setTel(rs.getString(4));
                 emp.setEstado(rs.getString(5));
                 emp.setUser(rs.getString(6));
+                emp.setContrasena(rs.getString(7));
             }
         }catch(Exception e){}
         return emp;
     }
     
     public int actualizar(Empleado em){
-        String sql="update empleado set Dni=?, Nombres=?, Telefono=?, Estado=?, User=? where IdEmpleado=?";
+        String sql="update empleado set Dni=?, Nombres=?, Telefono=?, Estado=?, User=?, Contrasena=? where IdEmpleado=?";
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -100,7 +102,8 @@ public class EmpleadoDAO {
             ps.setString(3, em.getTel());
             ps.setString(4, em.getEstado());
             ps.setString(5, em.getUser());
-            ps.setInt(6, em.getId());
+            ps.setString(6, em.getContrasena());
+            ps.setInt(7, em.getId());
             ps.executeUpdate();
         }catch(Exception e){}
         return r;

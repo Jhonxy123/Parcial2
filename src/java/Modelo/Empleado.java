@@ -9,19 +9,23 @@ public class Empleado {
     String tel;
     String estado;
     String user;
+    String Contrasena;
 
     public Empleado() {
     }
-
-    public Empleado(int id, String dni, String nom, String tel, String estado, String user) {
+    
+    public Empleado(int id, String dni, String nom, String tel, String estado, String user, String Contrasena) {
         this.id = id;
         this.dni = dni;
         this.nom = nom;
         this.tel = tel;
         this.estado = estado;
         this.user = user;
+        this.Contrasena = Contrasena;
     }
 
+    
+    
     public int getId() {
         return id;
     }
@@ -34,8 +38,8 @@ public class Empleado {
         return dni;
     }
 
-    public void setDni(String cedula) {
-        this.dni = cedula;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getNom() {
@@ -69,5 +73,15 @@ public class Empleado {
     public void setUser(String user) {
         this.user = user;
     }
+
+    public String getContrasena() {
+        return Contrasena;
+    }
+
+    public void setContrasena(String Contrasena) {
+        this.Contrasena = Contrasena;
+    }
+
+   
     
 }

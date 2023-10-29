@@ -12,6 +12,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,15 +31,19 @@ public class Validar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
+        private String asegurarClave(String textoclaro){
+        String clavesha="";
+        try{
+            MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
+            sha256.update(textoclaro.getBytes());
+            clavesha=Base64.getEncoder().encodeToString(sha256.digest());        
+        }catch(NoSuchAlgorithmException e){
+            System.out.println("ERROR EN LA ENCRIPTACION: "+e.getMessage());
+        }
+        return clavesha;
+    }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -58,10 +65,19 @@ public class Validar extends HttpServlet {
         if(accion.equalsIgnoreCase("Ingresar")){
             String user=request.getParameter("txtuser");
             String pass=request.getParameter("txtpass");
-            em=edao.validar(user, pass);
+            
+            //Guarda la clave si encriptar en la variable "clave_normal"
+            request.setAttribute("clave_normal", pass);
+            
+            //Encripta la clave ingresada por el usuario  
+            String ClaveEncriptada=asegurarClave(pass);
+            
+            
+            System.out.println("CLAVE ENCRIPTADA: "+ClaveEncriptada);
+            
+            em=edao.validar(user, ClaveEncriptada);
             if(em.getUser() !=null){
                 request.setAttribute("usuario", em);
-                        
                 request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
             }else{
                 request.getRequestDispatcher("index.jsp").forward(request, response);

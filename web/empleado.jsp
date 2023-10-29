@@ -38,6 +38,10 @@
                             <label>Usuario</label>
                             <input type="text" value="${empleado.getUser()}" name="txtUsuario" class="form-control">
                         </div>
+                        <div class="form-group">
+                            <label>Contraseña</label>
+                            <input type="text" value="${empleado.getContrasena()}" name="txtContrasena" class="form-control">
+                        </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-info">
                     </form>
